@@ -12,6 +12,18 @@ Bankster is a static web application for exploring bank branches and ATM service
 - Bilingual pages in Indonesian and English
 - About page with tabbed content
 
+## UI Preview
+
+Home page:
+
+![Bankster home page](Bankster/docs/screenshots/home.png)
+
+About page:
+
+![Bankster about page](Bankster/docs/screenshots/about.png)
+
+The preview screenshots use the static layout. Map and live location data require a local `Bankster/js/config.js` file with valid Supabase and Mapbox configuration.
+
 ## Tech Stack
 
 - HTML
