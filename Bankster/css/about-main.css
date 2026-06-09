@@ -1,0 +1,118 @@
+.about-info-container { /* Jika Anda menggunakan class tambahan */
+    /* Mungkin perlu padding atau style khusus lainnya */
+    padding: 30px;
+    background-color: #fff; /* Jika berbeda dari map-container biasa */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.about-info-container .map-title { /* Jika ingin styling judul utama berbeda */
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.info-tabs {
+    /* Bisa ditambahkan style jika perlu */
+}
+
+.tab-titles {
+    display: flex;
+    justify-content: space-around; /* Atau center, space-between */
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0; /* Garis pemisah bawah untuk judul */
+    padding-bottom: 10px;
+}
+
+.tab-title {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.1em; /* Ukuran font judul tab */
+    color: #555; /* Warna teks awal */
+    position: relative; /* Untuk pseudo-element garis bawah */
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.tab-title::after { /* Garis bawah awal (tersembunyi atau tipis) */
+    content: '';
+    position: absolute;
+    bottom: -1px; /* Posisikan di bawah border-bottom .tab-titles */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff; /* Warna garis saat aktif */
+    transform: scaleX(0); /* Awalnya tidak terlihat */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tab-title:hover {
+    color: #007bff; /* Warna teks saat hover */
+}
+
+.tab-title:hover::after {
+    transform: scaleX(1); /* Munculkan garis saat hover (opsional) */
+    background-color: #007bff; /* Warna garis saat hover */
+}
+
+.tab-title.active {
+    color: #0056b3; /* Warna teks lebih gelap saat aktif */
+    font-weight: 600;
+}
+
+.tab-title.active::after {
+    transform: scaleX(1); /* Garis terlihat saat aktif */
+    background-color: #0056b3; /* Warna garis lebih gelap saat aktif */
+    height: 3px; /* Garis lebih tebal saat aktif */
+}
+
+.tab-contents {
+    /* Bisa ditambahkan style jika perlu */
+}
+
+.tab-content {
+    display: none; /* Sembunyikan semua konten tab secara default */
+    padding: 15px 0; /* Padding atas bawah untuk konten */
+    line-height: 1.7;
+    color: #444;
+}
+
+.tab-content.active {
+    display: block; /* Tampilkan konten tab yang aktif */
+    animation: fadeIn 0.5s ease-in-out; /* Animasi sederhana */
+}
+
+.tab-content h3 {
+    font-size: 1.4em;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsiveness untuk .tab-titles jika perlu */
+@media (max-width: 768px) {
+    .tab-titles {
+        flex-direction: column; /* Susun judul tab secara vertikal */
+        align-items: stretch; /* Judul tab jadi full width */
+        border-bottom: none; /* Hapus border bawah global */
+    }
+    .tab-title {
+        text-align: left;
+        border-bottom: 1px solid #eee; /* Garis pemisah antar tab */
+        margin-bottom: 5px;
+    }
+    .tab-title::after {
+      bottom: -2px; /* Sesuaikan jika border tab-title lebih tebal */
+    }
+    .tab-title.active::after {
+        /* Mungkin tidak perlu garis bawah jika sudah ada border di tab-title */
+         height: 2px; /* Atau sesuaikan */
+    }
+}

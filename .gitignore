@@ -1,0 +1,10 @@
+# Local configuration and secrets
+Bankster/js/config.js
+.env
+.env.*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

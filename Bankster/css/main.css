@@ -1,0 +1,307 @@
+/* Styling untuk Section Peta */
+.map-section {
+    padding: 0px 15px;
+    background-color: #e9e9e9; /* Warna latar belakang section */
+}
+
+.map-container {
+    margin: -40px auto -40px auto; /* Tarik ke atas agar menimpa header sedikit */
+    position: relative;
+    z-index: 2;
+    background-color: #f8f9fa; /* Warna latar container peta */
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-title {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* --- STYLING FILTER BAR (TERMASUK CHECKBOX DAN SEARCH) --- */
+.filter-bar {
+    display: flex; /* Tetap flex untuk mengatur tata letak internal */
+    flex-direction: column; /* Susun .filter-controls-container DI ATAS .search-container */
+    gap: 20px; /* Jarak antara grup filter/apply button dan search bar */
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Kontainer untuk area checkbox dan tombol "Terapkan Filter" */
+.filter-controls-container {
+    display: flex;
+    justify-content: space-between; /* Checkbox kiri, tombol apply kanan */
+    align-items: flex-end; /* Sejajarkan tombol apply dengan bagian bawah checkbox */
+    width: 100%; /* Ambil lebar penuh */
+    flex-wrap: wrap; /* Biarkan wrap jika tidak cukup ruang */
+    gap: 15px; /* Jarak antara area checkbox dan tombol apply jika wrap */
+}
+
+/* Area yang membungkus semua grup filter checkbox */
+.filter-checkbox-area {
+    display: flex;
+    gap: 25px; /* Jarak antar grup filter (mis: Bank vs Layanan) */
+    flex-wrap: wrap; /* Biarkan grup filter wrap jika tidak cukup ruang */
+    flex-grow: 1; /* Biarkan area checkbox mengambil ruang sisa jika tombol apply di sampingnya */
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column; /* Susun judul di atas checkbox */
+}
+
+.filter-group h4 {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Area yang membungkus opsi-opsi checkbox dalam satu grup */
+.filter-group .checkbox-options {
+    display: flex;
+    flex-direction: row; /* Opsi checkbox berdampingan */
+    gap: 15px; /* Jarak antar opsi checkbox */
+    align-items: center;
+    flex-wrap: wrap; /* Biarkan opsi checkbox wrap di dalam grupnya */
+}
+
+.filter-group label {
+    font-size: 0.9em;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Hindari label pecah baris */
+}
+
+.filter-group input[type="checkbox"] {
+    margin-right: 6px; /* Jarak antara checkbox dan teks labelnya */
+    cursor: pointer;
+    /* Ukuran default browser, atau bisa di-custom: */
+    width: 15px;
+    height: 15px;
+    accent-color: #007bff;
+    transform: scale(0.9);
+}
+
+/* Tombol "Terapkan Filter" */
+.apply-filters-btn {
+    padding: 8px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    height: fit-content;
+    align-self: flex-end;
+}
+
+.apply-filters-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Styling Search Container dan Input (bagian dari .filter-bar) */
+/* Target .search-container yang merupakan child dari .filter-bar */
+.filter-bar .search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    border-radius: 6px;
+    width: 100%; /* Defaultnya full width di bawah filter checkbox */
+    max-width: 400px; /* Batasi lebar maksimum search bar */
+}
+
+.filter-bar .search-container input[type="search"] {
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    min-width: 150px;
+    border-radius: 6px 0 0 6px; /* Sudut kiri saja */
+    font-size: 0.95em;
+}
+
+.filter-bar .search-container input[type="search"]::-webkit-search-decoration,
+.filter-bar .search-container input[type="search"]::-webkit-search-cancel-button,
+.filter-bar .search-container input[type="search"]::-webkit-search-results-button,
+.filter-bar .search-container input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.filter-bar .search-icon {
+    background: none;
+    border: none;
+    padding: 0 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+}
+
+.filter-bar .search-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* Styling Konten Utama (Peta dan Daftar) */
+.map-content {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap; /* Agar bisa wrap di layar kecil */
+}
+
+.map-area {
+    flex: 3; /* Peta mengambil lebih banyak ruang */
+    min-height: 450px;
+    border-radius: 8px;
+    min-width: 300px; /* Lebar minimum untuk peta */
+    position: relative; /* Jika perlu untuk elemen di dalamnya */
+}
+
+#map {
+    width: 100%;
+    height: 100%; /* Mengisi .map-area */
+    min-height: 450px; /* Jaga tinggi minimal peta */
+    border-radius: 8px;
+}
+
+
+.location-list {
+    flex: 1.5; /* Daftar mengambil lebih sedikit ruang */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 250px; /* Lebar minimum untuk daftar */
+    max-height: 450px; /* Batasi tinggi list agar bisa di-scroll */
+    overflow-y: auto; /* Tambahkan scroll jika item melebihi max-height */
+    padding-right: 5px; /* Sedikit ruang untuk scrollbar */
+}
+
+.location-item {
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer; /* Indikasi item bisa diklik */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.location-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.location-item h4 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.location-item p {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.location-item p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Tombol Rute di Item List dan Popup Marker */
+.mapboxgl-popup {
+    max-width: 200px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.get-route-btn,
+.mapboxgl-popup-content .get-route-btn-marker {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    margin-top: 10px;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+    text-align: center;
+    align-self: flex-start; /* Agar tombol tidak melebar penuh */
+}
+
+.get-route-btn:hover,
+.mapboxgl-popup-content .get-route-btn-marker:hover {
+    background-color: #0056b3;
+}
+
+.get-route-btn:disabled,
+.mapboxgl-popup-content .get-route-btn-marker:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) { /* Breakpoint untuk tablet dan di bawahnya */
+    .filter-controls-container {
+        flex-direction: column; /* Tombol "Terapkan" di bawah checkbox */
+        align-items: stretch;
+        gap: 15px;
+    }
+    .filter-checkbox-area {
+        flex-direction: column; /* Grup filter (Bank, Layanan) jadi vertikal */
+        gap: 15px; /* Jarak antar grup filter yang jadi vertikal */
+        width: 100%;
+    }
+    .filter-group .checkbox-options {
+        flex-wrap: wrap; /* Biarkan checkbox wrap di grup */
+        gap: 10px 15px; /* Row gap and column gap */
+    }
+    .apply-filters-btn {
+        width: 100%; /* Tombol full width di mobile */
+        margin-top: 5px; /* Sedikit jarak jika tombol di baris baru */
+        padding: 10px 20px; /* Kembalikan padding normal di mobile */
+        font-size: 0.95em;
+    }
+    .filter-bar .search-container {
+        max-width: none; /* Search bar full width */
+    }
+}
+
+@media (max-width: 768px) { /* Breakpoint untuk mobile */
+    .map-title {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .map-content {
+        flex-direction: column; /* Peta di atas daftar */
+    }
+
+    .map-area {
+        min-height: 350px; /* Kurangi tinggi peta di mobile */
+    }
+    #map {
+        min-height: 350px; /* Kurangi tinggi peta di mobile */
+    }
+
+    .location-list {
+        max-height: 300px; /* Kurangi tinggi list di mobile */
+        flex: none; /* Hapus flex grow/shrink agar tinggi sesuai max-height */
+    }
+}

@@ -1,0 +1,205 @@
+/* Basic Reset and Body Style (Optional but Recommended) */
+* {
+    box-sizing: border-box; /* Makes padding/border included in width/height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif; /* Basic font */
+}
+
+/* Header Container Styling */
+.header-container {
+    position: relative;
+    height: 400px;
+    background-image: url('../images/background_1.jpg'); /* Dimulai dengan background_1 */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Tambahkan properti transisi di bawah ini */
+    transition: background-image 1.5s ease-in-out; /* Durasi transisi 1.5 detik */
+}
+
+/* Biarkan CSS lainnya sama */
+.header-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.header-content {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: rgba(25, 25, 25, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 1.8em; /* Make logo text bigger */
+    font-weight: bold;
+    /* In the image it says BANK BANDUNG, your HTML has BANKSTER. Style applies to .logo */
+    color: white;
+}
+
+/* Navigation Styling */
+.main-nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Arrange items horizontally */
+    gap: 25px; /* Space between nav items */
+}
+
+.main-nav a {
+    text-decoration: none; /* Remove underline */
+    color: white;
+    padding: 5px 10px; /* Add some clickable area */
+    transition: opacity 0.3s ease; /* Smooth hover effect */
+}
+
+.main-nav a:hover {
+    opacity: 0.8; /* Slight fade on hover */
+}
+
+/* Language Switcher Styling */
+.language-switcher {
+    color: white;
+}
+
+.language-switcher a {
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+.language-switcher a:hover {
+    opacity: 0.8;
+}
+
+.language-switcher a.lang-active {
+    font-weight: bold; /* Make the active language bold */
+    /* Or you could add: */
+    /* text-decoration: underline; */
+}
+
+/* --- Link this CSS file in your HTML head --- */
+/* Example: <link rel="stylesheet" href="css/style.css"> */
+
+/* --- Styling Footer (Yang sudah ada) --- */
+footer {
+    color: #ccc;
+}
+
+.footer-container {
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+}
+
+.footer-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-image: url('../images/background_5.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+
+.slider-container,
+.footer-copyright {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+
+.slider-container {
+    overflow: hidden;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+.slider {
+    display: flex;
+    will-change: transform;
+}
+
+.slider-logos {
+    overflow: hidden;
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.logos {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.logos-slide {
+  display: flex;
+  animation: slide 20s linear infinite;
+}
+
+.logos-slide img {
+  height: 70px;
+  margin: 0 40px;
+  transition: filter 0.3s;
+  opacity: 0.9;
+  filter: grayscale(20%);
+}
+
+.logos-slide img:hover {
+  filter: grayscale(0%);
+}
+
+.footer-copyright {
+    padding: 20px 0;
+    margin: 0px -20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Warna latar belakang semi-transparan */
+    backdrop-filter: blur(3px); /* Nilai blur kedua (lebih kecil/besar) */
+    -webkit-backdrop-filter: blur(3px); /* Untuk Safari */
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #eee;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/about-main.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-content">
+                <div class="logo">
+                    BANKSTER
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index-en.html">Home</a></li>
+                        <li><a href="about-en.html">About</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <a href="#" class="lang-active">EN</a> - <a href="index-id.html">ID</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="map-section">
+            <div class="map-container about-info-container"> 
+                <h2 class="map-title">More Information</h2> 
+    
+                <div class="info-tabs">
+                    <div class="tab-titles">
+                        <button class="tab-title active" data-tab="tab1">About</button>
+                        <button class="tab-title" data-tab="tab2">Bank BCA</button>
+                        <button class="tab-title" data-tab="tab3">Bank BSI</button>
+                        <button class="tab-title" data-tab="tab4">Bank BJB</button>
+                    </div>
+    
+                    <div class="tab-contents">
+                        <div id="tab1" class="tab-content active">
+                            <h3>Hi, we are the team behind Bankster Web.
+                            </h3>
+                            <p>
+                                We are a group of Computer Engineering students who are always enthusiastic to learn and try to make the best website possible.
+                                This semester, we were assigned to develop a web application, and this is the result.
+                            </p>
+                            <p>
+                                So, what is Bankster Web?
+                                Simply put, it's a tool to help you find ATM locations and branches of various banks across Indonesia quickly and easily, without the hassle of opening multiple apps.
+                            </p>
+                        </div>
+                        <div id="tab2" class="tab-content">
+                            <h3>Bank BCA (Bank Central Asia)</h3>
+                            <p>
+                                PT Bank Central Asia Tbk (BCA) is one of the largest private banks in Indonesia, established in 1957. 
+                                The bank is widely recognized for its focus on transaction banking services, 
+                                supported by an extensive network of ATMs and branches, 
+                                as well as strong digital innovation through mobile and internet banking services. 
+                                BCA serves a diverse range of customer segments, from individuals, MSMEs, to corporations, 
+                                and has consistently demonstrated solid financial performance.
+                            </p>
+                        </div>
+                        <div id="tab3" class="tab-content">
+                            <h3>Bank BSI (Bank Syariah Indonesia)
+                            </h3>
+                            <p>
+                                PT Bank Syariah Indonesia Tbk (BSI) is the largest Islamic bank in Indonesia which officially operates on February 1, 2021. 
+                                BSI is the result of the merger of three state-owned Islamic banks, namely PT Bank Syariah Mandiri, 
+                                PT Bank BNI Syariah, and PT Bank BRI Syariah. As the largest Islamic banking entity, 
+                                BSI operates based on Islamic sharia principles and aims to be the main driving force in the development of the halal industry ecosystem 
+                                as well as serving the Islamic financial needs of the Indonesian people at large.
+                            </p>
+                        </div>
+                        <div id="tab4" class="tab-content">
+                            <h3>Bank BJB (Bank Pembangunan Daerah Jawa Barat dan Banten)</h3>
+                            <p>
+                                PT Bank Pembangunan Daerah Jawa Barat dan Banten Tbk (Bank BJB) is a regional development bank (BPD) 
+                                owned by the West Java Provincial Government, Banten Provincial Government, as well as a number of city/regency governments in both provinces. 
+                                Bank BJB has a strategic role in supporting regional economic development, especially in West Java and Banten, 
+                                by providing banking services to local governments, Micro, Small and Medium Enterprises (MSMEs), corporations, and the general public. 
+                                The bank is also active in financing regional infrastructure projects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slider-logos">
+                        <div class="logos">
+                            <div class="logos-slide">
+                              <img src="images/logo_1.png" alt="Logo 1">
+                              <img src="images/logo_2.png" alt="Logo 2">
+                              <img src="images/logo_3.png" alt="Logo 3">
+                              <img src="images/logo_1.png" alt="Logo 1 Repeat">
+                              <img src="images/logo_2.png" alt="Logo 2 Repeat">
+                              <img src="images/logo_3.png" alt="Logo 3 Repeat">
+                            </div>
+                            <div class="logos-slide">
+                               <img src="images/logo_1.png" alt="Logo 1">
+                               <img src="images/logo_2.png" alt="Logo 2">
+                               <img src="images/logo_3.png" alt="Logo 3">
+                               <img src="images/logo_1.png" alt="Logo 1 Repeat">
+                               <img src="images/logo_2.png" alt="Logo 2 Repeat">
+                               <img src="images/logo_3.png" alt="Logo 3 Repeat">
+                             </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025 BANKSTER</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/header-script.js"></script>
+    <script src="js/about-script.js"></script>
+</body>
+</html>

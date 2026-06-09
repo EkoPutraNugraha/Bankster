@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.js"></script>
+    <script src="js/config.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-content">
+                <div class="logo">
+                    BANKSTER
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index-id.html">Beranda</a></li>
+                        <li><a href="about-id.html">Tentang</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <a href="index-en.html">EN</a> - <a href="#" class="lang-active">ID</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="map-section">
+            <div class="map-container">
+                <h2 class="map-title">Tempat dan Lokasi Bank di Bandung</h2>
+
+                <div class="filter-bar">
+                    <div class="filter-controls-container">
+                            <div class="filter-group">
+                                <h4>Pilih Bank:</h4>
+                                <div class="checkbox-options">
+                                    <label><input type="checkbox" name="bank" value="BCA"> BCA</label>
+                                    <label><input type="checkbox" name="bank" value="BSI"> BSI</label>
+                                    <label><input type="checkbox" name="bank" value="BJB"> BJB</label>
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <h4>Tipe Layanan:</h4>
+                                <div class="checkbox-options">
+                                    <label><input type="checkbox" name="facility" value="Kantor Cabang"> Kantor Cabang</label>
+                                    <label><input type="checkbox" name="facility" value="Tarik Tunai"> Tarik Tunai (ATM)</label>
+                                    <label><input type="checkbox" name="facility" value="Setor Tunai"> Setor Tunai (ATM)</label>
+                                </div>
+                            </div>
+                        <button type="button" id="apply-filters-btn" class="apply-filters-btn">Terapkan Filter</button>
+                    </div>
+
+                    <div class="filter-item search-container">
+                         <input type="search" id="search-location" placeholder="Cari Nama / Alamat..." aria-label="Cari Lokasi">
+                         <button type="button" class="search-icon" aria-label="Cari">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                             </svg>
+                         </button>
+                     </div>
+
+                     <div id="route-status" style="text-align: center; padding-top: 20px; font-size: 0.9em; color: #333; border-top: 1px solid #ddd;"></div>
+
+                </div>
+
+                <div class="map-content">
+                    <div class="map-area">
+                        <div id="map" style="width: 100%; height: 450px;"></div>
+                    </div>
+
+                    <div class="location-list">
+                        <p>Pilih filter dan klik "Terapkan Filter", atau cari nama/alamat untuk menampilkan data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slider-logos">
+                        <div class="logos">
+                            <div class="logos-slide">
+                              <img src="images/logo_1.png" alt="Logo 1">
+                              <img src="images/logo_2.png" alt="Logo 2">
+                              <img src="images/logo_3.png" alt="Logo 3">
+                              <img src="images/logo_1.png" alt="Logo 1 Repeat">
+                              <img src="images/logo_2.png" alt="Logo 2 Repeat">
+                              <img src="images/logo_3.png" alt="Logo 3 Repeat">
+                            </div>
+                            <div class="logos-slide">
+                               <img src="images/logo_1.png" alt="Logo 1">
+                               <img src="images/logo_2.png" alt="Logo 2">
+                               <img src="images/logo_3.png" alt="Logo 3">
+                               <img src="images/logo_1.png" alt="Logo 1 Repeat">
+                               <img src="images/logo_2.png" alt="Logo 2 Repeat">
+                               <img src="images/logo_3.png" alt="Logo 3 Repeat">
+                             </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2025 BANKSTER</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/header-script.js"></script>
+</body>
+</html>
