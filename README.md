@@ -22,6 +22,10 @@ About page:
 
 ![Bankster about page](Bankster/docs/screenshots/about.png)
 
+Route preview:
+
+![Bankster route preview](Bankster/docs/screenshots/route-preview.png)
+
 The preview screenshots use the static layout. Map and live location data require a local `Bankster/js/config.js` file with valid Supabase and Mapbox configuration.
 
 ## Tech Stack
